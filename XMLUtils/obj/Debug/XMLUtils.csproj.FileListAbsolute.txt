@@ -1,0 +1,7 @@
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\bin\Debug\XMLUtils.exe.config
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\bin\Debug\XMLUtils.exe
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\bin\Debug\XMLUtils.pdb
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\obj\Debug\XMLUtils.csprojAssemblyReference.cache
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\obj\Debug\XMLUtils.csproj.CoreCompileInputs.cache
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\obj\Debug\XMLUtils.exe
+C:\Users\ali4728\source\repos\XMLUtils\XMLUtils\obj\Debug\XMLUtils.pdb
