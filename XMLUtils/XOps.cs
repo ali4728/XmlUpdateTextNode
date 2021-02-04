@@ -10,9 +10,9 @@ namespace XMLUtils
 {
     public class XOps
     {
-        public static void PostProcess(Stream inStream, Stream outStream)
+        public static void Execute(Stream inStream, Stream outStream)
         {
-            var settings = new XmlWriterSettings() { Indent = true, IndentChars = " " };
+            var settings = new XmlWriterSettings() { Indent = true, IndentChars = "  " };
             string[] badChars = {"*","~",":","^" };
             using (var reader = XmlReader.Create(inStream))
             using (var writer = XmlWriter.Create(outStream, settings))
@@ -23,15 +23,24 @@ namespace XMLUtils
                     {
                         case XmlNodeType.Element:
                             writer.WriteStartElement(reader.Prefix, reader.LocalName, reader.NamespaceURI);
-
-
+                            
                             //writer.WriteAttributes(reader, true);
                             
                             if (reader.HasAttributes) {
                                 for (int i = 0; i < reader.AttributeCount; i++)
-                                {
-                                    reader.MoveToAttribute(i);                                    
-                                    writer.WriteAttributeString(reader.Prefix, reader.LocalName, null, "updated|" + reader.Value);
+                                {   
+                                    reader.MoveToAttribute(i);
+                                    
+                                    string aval = reader.Value;
+                                    foreach (string item in badChars)
+                                    {
+                                        if (reader.Value.Contains(item))
+                                        {
+                                            aval = reader.Value.Replace(item, "");
+                                        }
+                                    }
+
+                                    writer.WriteAttributeString(reader.Prefix, reader.LocalName, reader.NamespaceURI, aval);
                                 }
                                 reader.MoveToElement();
                             }

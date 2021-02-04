@@ -14,15 +14,11 @@ namespace XMLUtils
             string inFile = @"C:\temp\SmpleXmlDocument.xml";
             string outFile = @"C:\temp\SmpleXmlDocument_OUT.xml";
 
-
             FileStream SourceStream = File.Open(inFile, FileMode.Open);
-
             FileStream DestinationStream = File.Create(outFile);
-
-            XOps.PostProcess(SourceStream, DestinationStream);
-
-
-
+            
+            //NodeInfo.Execute(SourceStream);
+            XOps.Execute(SourceStream, DestinationStream);
 
         }
     }
